@@ -8,7 +8,7 @@
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",
     "start": "node dist/server",
-    "webpack": "webpack --config webpack.config.js",
+    "webpack": "rimraf dist && webpack --config webpack.config.js",
     "start:dev": "concurrently --handle-input \"wait-on dist/main.js && nodemon\" \"tsc -w -p tsconfig.build.json\" ",
     "start:debug": "nodemon --config nodemon-debug.json",
     "prestart:prod": "rimraf dist && npm run build",
@@ -25,11 +25,15 @@
     "@nestjs/core": "^6.2.0",
     "@nestjs/passport": "^6.1.0",
     "@nestjs/platform-express": "^6.0.0",
+    "@nestjs/swagger": "^3.0.2",
+    "cookie-parser": "^1.4.4",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.5.2"
+    "rxjs": "^6.5.2",
+    "svg-captcha": "^1.4.0",
+    "typeorm": "^0.2.17"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.0.0",
